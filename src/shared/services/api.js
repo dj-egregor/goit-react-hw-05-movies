@@ -8,9 +8,6 @@ const instance = axios.create({
   },
 });
 
-const API_KEY = '31449444226ba6345698313fe055564a';
-const BASE_URL = 'https://api.themoviedb.org/3';
-
 export async function getTrendingMovies() {
   const query = `/trending/movie/week`;
   console.log(query);
