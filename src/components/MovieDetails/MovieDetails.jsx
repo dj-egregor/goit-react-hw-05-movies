@@ -43,7 +43,10 @@ const MovieDetails = () => {
         'Loading...'
       ) : (
         <>
-          <img src={`https://image.tmdb.org/t/p/w500${data.poster_path}`} />
+          <img
+            alt={data.original_title}
+            src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+          />
           <h1>
             {data.original_title} ({getYear(data.release_date)})
           </h1>
