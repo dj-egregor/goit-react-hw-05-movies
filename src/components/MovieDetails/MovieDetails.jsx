@@ -1,13 +1,11 @@
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams, Link, Outlet, useNavigate } from 'react-router-dom';
 import { useState, useEffect, Suspense } from 'react';
-import { Link, Outlet } from 'react-router-dom';
 import { getMovieDetails } from '../../shared/services/api';
 
 const MovieDetails = () => {
+  const navigate = useNavigate();
+
   const { movieId } = useParams();
-  console.log(movieId);
-  const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/';
 
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -18,7 +16,6 @@ const MovieDetails = () => {
         setLoading(true);
         const data = await getMovieDetails(movieId);
         setData(data);
-        console.log(data);
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -38,7 +35,7 @@ const MovieDetails = () => {
 
   return (
     <>
-      <Link to={backLinkHref}>Back to movies</Link>
+      <button onClick={() => navigate(-1)}>Go Back</button>
       {loading ? (
         'Loading...'
       ) : (

@@ -21,7 +21,6 @@ export async function getTrendingMovies() {
 
 export async function getMovieDetails(id) {
   const query = `/movie/${id}`;
-  console.log(query);
   try {
     const { data } = await instance.get(query);
     return data;

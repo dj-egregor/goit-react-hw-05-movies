@@ -14,7 +14,6 @@ const Cast = () => {
         setLoading(true);
         const { cast } = await getMovieCast(movieId);
         setData(cast);
-        console.log(cast);
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -22,8 +21,6 @@ const Cast = () => {
     };
     getData();
   }, [movieId]);
-
-  console.log(movieId, data);
 
   return (
     <>

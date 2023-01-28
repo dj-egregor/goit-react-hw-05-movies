@@ -1,32 +1,3 @@
-// import { useState } from 'react';
-
-// import { searchMovie } from '../api';
-
-// const Movies = () => {
-//   const [search, setSearch] = useState('');
-
-//   const handleSubmit = event => {
-//     event.preventDefault();
-//     console.log(search);
-//   };
-
-//   const handleChange = e => {
-//     setSearch(e.target.value);
-//   };
-
-//   return (
-//     <>
-//       <h2>Movies</h2>
-//       <form onSubmit={handleSubmit}>
-//         <input onChange={handleChange} name="search" type="text" />
-//         <button type="submit">Search</button>
-//       </form>
-//     </>
-//   );
-// };
-
-// export default Movies;
-
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { searchMovie } from '../../shared/services/api';
