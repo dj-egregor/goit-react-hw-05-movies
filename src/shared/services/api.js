@@ -53,7 +53,7 @@ export async function getMovieReviews(id) {
 }
 
 export async function searchMovie(queryString) {
-  const query = `/search/movie/?query=${queryString}`;
+  const query = `/search/movie?query=${queryString}`;
   console.log(query);
   try {
     const { data } = await instance.get(query);
