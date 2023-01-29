@@ -9,7 +9,7 @@
 
 .navigation::before {
   content: '';
-  background-image: url('./SVG/movie.svg');
+  /* background-image: url('./SVG/movie.svg'); */
   background-size: cover;
   position: absolute;
   width: 40px;

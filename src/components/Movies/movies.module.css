@@ -78,7 +78,7 @@
 
 .listItem::before {
   content: '';
-  background-image: url('../SVG/film.svg');
+  /* background-image: url('../SVG/film.svg'); */
   background-size: cover;
   position: absolute;
   width: 25px;

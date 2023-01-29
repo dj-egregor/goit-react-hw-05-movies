@@ -32,7 +32,7 @@
 
 .btn::before {
   content: '';
-  background-image: url('../SVG/arrow-left.svg');
+  /* background-image: url('../SVG/arrow-left.svg'); */
   background-size: cover;
   position: absolute;
   width: 15px;
@@ -58,7 +58,7 @@
 
 .castBtn::before {
   content: '';
-  background-image: url('../SVG/user.svg');
+  /* background-image: url('../SVG/user.svg'); */
   background-size: cover;
   position: absolute;
   width: 15px;
@@ -84,7 +84,7 @@
 
 .reviewsBtn::before {
   content: '';
-  background-image: url('../SVG/book-alt2.svg');
+  /* background-image: url('../SVG/book-alt2.svg'); */
   background-size: cover;
   position: absolute;
   width: 15px;
