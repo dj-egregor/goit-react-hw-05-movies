@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { ListMovies, MovieItem } from './home.styled';
 import { getTrendingMovies } from '../../shared/services/api';
 import css from './home.module.css';
 
@@ -24,18 +23,18 @@ const Home = ({ children }) => {
 
   return (
     <>
-      <ListMovies>
+      <ul className={css.list}>
         <h2 className={css.title}>Trending movies:</h2>
         {loading
           ? 'Loading...'
           : data.map(({ title, id }) => (
-              <MovieItem key={id}>
+              <li className={css.listItem} key={id}>
                 <NavLink to={`/movies/${id}`} className={css.movieItem}>
                   {title}
                 </NavLink>
-              </MovieItem>
+              </li>
             ))}
-      </ListMovies>
+      </ul>
     </>
     // <>
     //   <ListMovies>

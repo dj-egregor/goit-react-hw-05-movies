@@ -35,41 +35,6 @@ const MovieDetails = () => {
   };
 
   return (
-    // <>
-    //   <button onClick={() => navigate(-1)}>Go Back</button>
-    //   {loading ? (
-    //     'Loading...'
-    //   ) : (
-    //     <>
-    //       <img
-    //         alt={data.original_title}
-    //         src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
-    //       />
-    //       <h1>
-    //         {data.original_title} ({getYear(data.release_date)})
-    //       </h1>
-    //       <p>User Score: {~~(data.vote_average * 10)}%</p>
-    //       <p>Overview</p>
-    //       <p>{data.overview}</p>
-    //       <p>Genres</p>
-    //       <p>{getGenres(data.genres)}</p>
-    //       <div>
-    //         <p>Additional information</p>
-    //         <ul>
-    //           <li>
-    //             <Link to={`/movies/${data.id}/cast`}>Cast</Link>
-    //           </li>
-    //           <li>
-    //             <Link to={`/movies/${data.id}/reviews`}>Reviews </Link>
-    //           </li>
-    //         </ul>
-    //       </div>
-    //       <Suspense fallback={<div>Loading subpage...</div>}>
-    //         <Outlet />
-    //       </Suspense>
-    //     </>
-    //   )}
-    // </>
     <>
       <button onClick={() => navigate(-1)} className={css.btn}>
         Go Back
@@ -98,7 +63,6 @@ const MovieDetails = () => {
             </div>
           </div>
           <div>
-            {/* <p>Additional information</p> */}
             <ul className={css.btnList}>
               <li>
                 <Link to={`/movies/${data.id}/cast`}>
