@@ -1,13 +1,18 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-05-movies/static/css/main.7acaea2f.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.e41c302c.js",
+    "main.css": "/goit-react-hw-05-movies/static/css/main.3e57062f.css",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.29a7c56d.js",
     "index.html": "/goit-react-hw-05-movies/index.html",
-    "main.7acaea2f.css.map": "/goit-react-hw-05-movies/static/css/main.7acaea2f.css.map",
-    "main.e41c302c.js.map": "/goit-react-hw-05-movies/static/js/main.e41c302c.js.map"
+    "static/media/film.svg": "/goit-react-hw-05-movies/static/media/film.cc49341e732e32570ad6.svg",
+    "static/media/book-alt2.svg": "/goit-react-hw-05-movies/static/media/book-alt2.70c38488d96f2a66ce3a.svg",
+    "static/media/movie.svg": "/goit-react-hw-05-movies/static/media/movie.03df2a2c0032dfe2836b.svg",
+    "static/media/user.svg": "/goit-react-hw-05-movies/static/media/user.6d738714c78809e66619.svg",
+    "static/media/arrow-left.svg": "/goit-react-hw-05-movies/static/media/arrow-left.73743264f968b44bf7fc.svg",
+    "main.3e57062f.css.map": "/goit-react-hw-05-movies/static/css/main.3e57062f.css.map",
+    "main.29a7c56d.js.map": "/goit-react-hw-05-movies/static/js/main.29a7c56d.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.e41c302c.js"
+    "static/css/main.3e57062f.css",
+    "static/js/main.29a7c56d.js"
   ]
 }
