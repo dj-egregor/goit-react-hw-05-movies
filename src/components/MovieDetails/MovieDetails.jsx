@@ -63,6 +63,7 @@ const MovieDetails = () => {
             </div>
           </div>
           <div>
+            {/* <p>Additional information</p> */}
             <ul className={css.btnList}>
               <li>
                 <Link to={`/movies/${data.id}/cast`}>

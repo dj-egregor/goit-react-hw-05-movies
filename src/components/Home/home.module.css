@@ -1,29 +1,16 @@
 .movieItem::before {
-  content: '';
-  /* background-image: url('../SVG/film.svg'); */
-  background-size: cover;
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  left: -20px;
-  /* fill: #272727; */
+    content: "";
+    background-image: url(../SVG/film.svg);
+    background-size: cover;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: -20px;
+    /* fill: #272727; */
 }
 
 .movieItem:hover,
 .movieItem:focus {
-  color: orange;
-  cursor: pointer;
-}
-
-.list {
-  list-style-type: none;
-  margin-bottom: 10px;
-  font-size: 20px;
-  margin-left: 100px;
-}
-
-.listItem {
-  position: relative;
-  display: flex;
-  padding: 5px 10px;
+    color: orange;
+    cursor: pointer;
 }

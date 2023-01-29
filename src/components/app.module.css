@@ -1,18 +1,18 @@
 .navigation {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  width: 100%;
-  height: 70px;
-  background-color: #392c2c;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    background-color: #392c2c;
 }
 
 .navigation::before {
-  content: '';
-  /* background-image: url('./SVG/movie.svg'); */
-  background-size: cover;
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  left: 100px;
+    content: "";
+    background-image: url(./SVG/movie.svg);
+    background-size: cover;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 100px;
 }
