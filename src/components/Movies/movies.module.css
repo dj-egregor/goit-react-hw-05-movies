@@ -1,0 +1,94 @@
+.title {
+    font-size: 30px;
+}
+
+.wrap {
+    display: flex;
+    margin-left: 100px;
+}
+
+.movieForm {
+    margin-top: 5px;
+    margin-left: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.movieInput {
+    padding: 7px;
+    width: 200px;
+    height: calc(1.5rem + 2px);
+    border: 1px solid #272727;
+    border-radius: 5px;
+    padding: 0.375rem 0.75rem;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #bdbdbd;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.movieInput::placeholder {
+    color: #212529;
+    opacity: 0.4;
+}
+
+.movieInput:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #bdbdbd;
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem rgba(158, 158, 158, 0.25);
+}
+
+.btn {
+    padding: 11px;
+    background-color: orange;
+    font-size: 16px;
+    border: none;
+    color: #fff;
+    border-radius: 7px;
+    margin: 0 0 0 5px;
+    transition: all cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.btn:hover {
+    background-color: rgb(255, 141, 2);
+    cursor: pointer;
+}
+
+.list {
+    list-style-type: none;
+    margin-bottom: 10px;
+    font-size: 20px;
+    margin-left: 100px;
+}
+
+.listItem {
+    position: relative;
+    display: flex;
+    padding: 5px 10px
+}
+
+.listItem::before {
+    content: "";
+    background-image: url(../SVG/film.svg);
+    background-size: cover;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: -20px;
+    /* fill: #272727; */
+}
+
+.listItem:hover,
+.listItem:focus {
+    color: orange;
+    cursor: pointer;
+}

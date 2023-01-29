@@ -1,0 +1,103 @@
+.img {
+    width: 270px;
+    height: 100%;
+}
+
+.imgWrap {
+    display: flex;
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+.descrWrap {
+    display: inline-block;
+    margin-left: 50px;
+    padding-right: 100px;
+}
+
+.btn {
+    padding: 9px 9px 9px 25px;
+    background-color: orange;
+    font-size: 16px;
+    border: none;
+    color: #fff;
+    border-radius: 7px;
+    margin: 20px 0 0 5px;
+}
+
+.btn:hover {
+    background-color: rgb(255, 141, 2);
+    cursor: pointer;
+}
+
+.btn::before {
+    content: "";
+    background-image: url(../SVG/arrow-left.svg);
+    background-size: cover;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 10px;
+}
+
+.btnList {
+    list-style: none;
+    display: flex;
+    margin-left: 76px;
+}
+
+.castBtn {
+    padding: 9px;
+    background-color: orange;
+    font-size: 16px;
+    border: none;
+    width: 110px;
+    color: #fff;
+    border-radius: 7px;
+}
+
+.castBtn::before {
+    content: "";
+    background-image: url(../SVG/user.svg);
+    background-size: cover;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 125px;
+}
+
+.castBtn:hover {
+    background-color: rgb(255, 141, 2);
+    cursor: pointer;
+}
+
+.reviewsBtn {
+    padding: 9px 9px 9px 25px;
+    background-color: orange;
+    font-size: 16px;
+    width: 110px;
+    border: none;
+    color: #fff;
+    border-radius: 7px;
+    margin-left: 15px;
+}
+
+.reviewsBtn::before {
+    content: "";
+    background-image: url(../SVG/book-alt2.svg);
+    background-size: cover;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 250px;
+}
+
+.reviewsBtn:hover {
+    background-color: rgb(255, 141, 2);
+    cursor: pointer;
+}
+
+.descrTitle {
+    font-size: 20px;
+    font-weight: 600;
+}
