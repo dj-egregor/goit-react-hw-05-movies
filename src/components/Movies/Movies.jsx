@@ -18,7 +18,7 @@ const Movies = ({ children }) => {
   console.log(searchMovieQuery);
 
   const navigate = useNavigate();
-  const location = useLocation();
+  // const location = useLocation();
 
   useEffect(() => {
     setQuery(searchMovieQuery);
