@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { searchMovie } from '../../shared/services/api';
 import css from './movies.module.css';
+import PropTypes from 'prop-types';
 
 const Movies = ({ children }) => {
   const [data, setData] = useState(null);
@@ -64,6 +65,14 @@ const Movies = ({ children }) => {
       </ul>
     </>
   );
+};
+
+Movies.propTypes = {
+  children: PropTypes.node,
+};
+
+Movies.defaultProps = {
+  children: null,
 };
 
 export default Movies;

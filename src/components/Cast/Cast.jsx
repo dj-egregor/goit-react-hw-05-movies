@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getMovieCast } from '../../shared/services/api';
 import css from './cast.module.css';
+import PropTypes from 'prop-types';
 
 const Cast = () => {
   const [data, setData] = useState(null);
@@ -50,6 +51,10 @@ const Cast = () => {
       )}
     </>
   );
+};
+
+Cast.propTypes = {
+  movieId: PropTypes.number,
 };
 
 export default Cast;
