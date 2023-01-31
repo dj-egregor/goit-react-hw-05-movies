@@ -23,8 +23,6 @@ const Reviews = () => {
     getData();
   }, [movieId]);
 
-  console.log(movieId, data);
-
   return (
     <>
       {loading ? (
