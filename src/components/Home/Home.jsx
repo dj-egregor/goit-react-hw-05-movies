@@ -5,7 +5,7 @@ import { getTrendingMovies } from '../../shared/services/api';
 import css from './home.module.css';
 import PropTypes from 'prop-types';
 
-const Home = ({ children }) => {
+const Home = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -39,14 +39,6 @@ const Home = ({ children }) => {
       </ListMovies>
     </>
   );
-};
-
-Home.propTypes = {
-  children: PropTypes.node,
-};
-
-Home.defaultProps = {
-  children: null,
 };
 
 export default Home;

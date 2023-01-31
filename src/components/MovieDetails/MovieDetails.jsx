@@ -2,7 +2,6 @@ import { useParams, Link, Outlet, useNavigate } from 'react-router-dom';
 import { useState, useEffect, Suspense } from 'react';
 import { getMovieDetails } from '../../shared/services/api';
 import css from './movie-details.module.css';
-import PropTypes from 'prop-types';
 
 const MovieDetails = () => {
   const navigate = useNavigate();
@@ -86,8 +85,6 @@ const MovieDetails = () => {
   );
 };
 
-MovieDetails.propTypes = {
-  movieId: PropTypes.number,
-};
+
 
 export default MovieDetails;
