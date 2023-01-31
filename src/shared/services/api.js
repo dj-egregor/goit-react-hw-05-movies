@@ -10,7 +10,6 @@ const instance = axios.create({
 
 export async function getTrendingMovies() {
   const query = `/trending/movie/week`;
-  console.log(query);
   try {
     const { data } = await instance.get(query);
     return data.results;
@@ -31,7 +30,6 @@ export async function getMovieDetails(id) {
 
 export async function getMovieCast(id) {
   const query = `/movie/${id}/credits`;
-  console.log(query);
   try {
     const { data } = await instance.get(query);
     return data;
@@ -42,7 +40,6 @@ export async function getMovieCast(id) {
 
 export async function getMovieReviews(id) {
   const query = `/movie/${id}/reviews`;
-  console.log(query);
   try {
     const { data } = await instance.get(query);
     return data;
@@ -53,7 +50,6 @@ export async function getMovieReviews(id) {
 
 export async function searchMovie(queryString) {
   const query = `/search/movie?query=${queryString}`;
-  console.log(query);
   try {
     const { data } = await instance.get(query);
     return data;
