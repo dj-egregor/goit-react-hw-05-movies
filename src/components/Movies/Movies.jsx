@@ -1,24 +1,35 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { NavLink, useSearchParams, useLocation } from 'react-router-dom';
 import { searchMovie } from '../../shared/services/api';
 import css from './movies.module.css';
-import PropTypes from 'prop-types';
 
-const Movies = ({ children }) => {
+const Movies = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [query, setQuery] = useState('');
 
-  const getData = async () => {
-    try {
-      setLoading(true);
-      const { results } = await searchMovie(query);
-      setData(results);
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const [searchParams, setSearchParams] = useSearchParams();
+  const searchQuery = searchParams.get('query');
+
+  const [query, setQuery] = useState(() => searchQuery || '');
+
+  const location = useLocation();
+  console.log(location.state);
+
+  console.log(searchQuery);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        setLoading(true);
+        const { results } = await searchMovie(query);
+        setData(results);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getData();
+  }, [searchQuery]);
 
   const handleChange = e => {
     setQuery(e.target.value);
@@ -26,7 +37,8 @@ const Movies = ({ children }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    getData();
+    setSearchParams({ query: query });
+    // getData();
   };
 
   return (
@@ -67,12 +79,12 @@ const Movies = ({ children }) => {
   );
 };
 
-Movies.propTypes = {
-  children: PropTypes.node,
-};
+// Movies.propTypes = {
+//   children: PropTypes.node,
+// };
 
-Movies.defaultProps = {
-  children: null,
-};
+// Movies.defaultProps = {
+//   children: null,
+// };
 
 export default Movies;
