@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { ListMovies, MovieItem } from './home.styled';
 import { getTrendingMovies } from '../../shared/services/api';
 import css from './home.module.css';
-import PropTypes from 'prop-types';
 
 const Home = () => {
   const [data, setData] = useState(null);
