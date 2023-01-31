@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { NavLink, useSearchParams, useLocation } from 'react-router-dom';
+import { NavLink, useSearchParams } from 'react-router-dom';
 import { searchMovie } from '../../shared/services/api';
 import css from './movies.module.css';
 
@@ -12,16 +12,11 @@ const Movies = () => {
 
   const [query, setQuery] = useState(() => searchQuery || '');
 
-  const location = useLocation();
-  console.log(location.state);
-
-  console.log(searchQuery);
-
   useEffect(() => {
     const getData = async () => {
       try {
         setLoading(true);
-        const { results } = await searchMovie(query);
+        const { results } = await searchMovie(searchQuery);
         setData(results);
         setLoading(false);
       } catch (error) {
@@ -38,7 +33,6 @@ const Movies = () => {
   const handleSubmit = e => {
     e.preventDefault();
     setSearchParams({ query: query });
-    // getData();
   };
 
   return (
@@ -61,7 +55,7 @@ const Movies = () => {
         </form>
       </div>
       <ul className={css.list}>
-        {query ? (
+        {searchQuery ? (
           loading ? (
             'Loading...'
           ) : (
@@ -72,19 +66,11 @@ const Movies = () => {
             ))
           )
         ) : (
-          <p className={css.descr}>...</p>
+          <p className={css.descr}></p>
         )}
       </ul>
     </>
   );
 };
-
-// Movies.propTypes = {
-//   children: PropTypes.node,
-// };
-
-// Movies.defaultProps = {
-//   children: null,
-// };
 
 export default Movies;
