@@ -20,9 +20,12 @@ const Movies = () => {
         setLoading(true);
         const { results } = await searchMovie(searchQuery);
         setData(results);
+        console.log(results);
         setLoading(false);
       } catch (error) {
         console.log(error);
+      } finally {
+        setLoading(false);
       }
     };
     getData();
@@ -60,7 +63,7 @@ const Movies = () => {
         {searchQuery ? (
           loading ? (
             'Loading...'
-          ) : (
+          ) : data.length > 0 ? (
             data.map(({ title, id }) => (
               <li key={id} className={css.listItem}>
                 <Link state={{ from: location }} to={`/movies/${id}`}>
@@ -68,6 +71,10 @@ const Movies = () => {
                 </Link>
               </li>
             ))
+          ) : (
+            <p>
+              No movies with this title were found. Try entering another title
+            </p>
           )
         ) : (
           <p className={css.descr}></p>

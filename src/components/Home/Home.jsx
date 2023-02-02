@@ -10,8 +10,6 @@ const Home = () => {
 
   const location = useLocation();
 
-  const cameBack = location.state?.from ?? '/';
-
   useEffect(() => {
     const getData = async () => {
       try {
@@ -34,9 +32,6 @@ const Home = () => {
           ? 'Loading...'
           : data.map(({ title, id }) => (
               <MovieItem key={id}>
-                {/* <NavLink to={`/movies/${id}`} className={css.movieItem}>
-                  {title}
-                </NavLink> */}
                 <Link
                   to={`/movies/${id}`}
                   state={{ from: location }}

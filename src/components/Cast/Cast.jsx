@@ -19,6 +19,8 @@ const Cast = () => {
         setLoading(false);
       } catch (error) {
         console.log(error);
+      } finally {
+        setLoading(false);
       }
     };
     getData();

@@ -1,9 +1,9 @@
 import { lazy, Suspense } from 'react';
 
-import { Routes, Route, NavLink, useNavigate } from 'react-router-dom';
+import { Routes, Route, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import css from './app.module.css';
-import { useEffect } from 'react';
+import { NotFound } from './NotFound/NotFound';
 
 const Home = lazy(() => import('./Home/Home'));
 const Movies = lazy(() => import('./Movies/Movies'));
@@ -26,12 +26,6 @@ export const App = () => {
     }
   `;
 
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    navigate('/');
-  }, []);
-
   return (
     <>
       <nav className={css.navigation}>
@@ -49,7 +43,7 @@ export const App = () => {
             <Route path="cast" element={<Cast />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </>
