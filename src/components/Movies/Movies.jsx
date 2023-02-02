@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { NavLink, useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams, useLocation } from 'react-router-dom';
 import { searchMovie } from '../../shared/services/api';
 import css from './movies.module.css';
 
@@ -11,6 +11,8 @@ const Movies = () => {
   const searchQuery = searchParams.get('query');
 
   const [query, setQuery] = useState(() => searchQuery || '');
+
+  const location = useLocation();
 
   useEffect(() => {
     const getData = async () => {
@@ -61,7 +63,9 @@ const Movies = () => {
           ) : (
             data.map(({ title, id }) => (
               <li key={id} className={css.listItem}>
-                <NavLink to={`/movies/${id}`}>{title}</NavLink>
+                <Link state={{ from: location }} to={`/movies/${id}`}>
+                  {title}
+                </Link>
               </li>
             ))
           )

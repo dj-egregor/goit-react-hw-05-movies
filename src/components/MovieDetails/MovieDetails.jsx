@@ -1,11 +1,9 @@
-import { useParams, Link, Outlet, useNavigate } from 'react-router-dom';
+import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { useState, useEffect, Suspense } from 'react';
 import { getMovieDetails } from '../../shared/services/api';
 import css from './movie-details.module.css';
 
 const MovieDetails = () => {
-  const navigate = useNavigate();
-
   const { movieId } = useParams();
 
   const [data, setData] = useState(null);
@@ -34,11 +32,15 @@ const MovieDetails = () => {
     return arrGenres.map(genre => genre.name).join(', ');
   };
 
+  const location = useLocation();
+
+  const cameBack = location.state?.from ?? '/';
+
   return (
     <>
-      <button onClick={() => navigate(-1)} className={css.btn}>
+      <Link className={css.btn} to={cameBack}>
         Go Back
-      </button>
+      </Link>
       {loading ? (
         'Loading...'
       ) : (
@@ -65,12 +67,12 @@ const MovieDetails = () => {
           <div>
             <ul className={css.btnList}>
               <li>
-                <Link to={`/movies/${data.id}/cast`}>
+                <Link to="cast" state={{ from: cameBack }}>
                   <button className={css.castBtn}>Cast</button>
                 </Link>
               </li>
               <li>
-                <Link to={`/movies/${data.id}/reviews`}>
+                <Link to="reviews" state={{ from: cameBack }}>
                   <button className={css.reviewsBtn}>Reviews</button>
                 </Link>
               </li>
@@ -84,7 +86,5 @@ const MovieDetails = () => {
     </>
   );
 };
-
-
 
 export default MovieDetails;

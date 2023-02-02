@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ListMovies, MovieItem } from './home.styled';
 import { getTrendingMovies } from '../../shared/services/api';
 import css from './home.module.css';
@@ -7,6 +7,10 @@ import css from './home.module.css';
 const Home = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  const location = useLocation();
+
+  const cameBack = location.state?.from ?? '/';
 
   useEffect(() => {
     const getData = async () => {
@@ -30,9 +34,16 @@ const Home = () => {
           ? 'Loading...'
           : data.map(({ title, id }) => (
               <MovieItem key={id}>
-                <NavLink to={`/movies/${id}`} className={css.movieItem}>
+                {/* <NavLink to={`/movies/${id}`} className={css.movieItem}>
                   {title}
-                </NavLink>
+                </NavLink> */}
+                <Link
+                  to={`/movies/${id}`}
+                  state={{ from: location }}
+                  className={css.movieItem}
+                >
+                  {title}
+                </Link>
               </MovieItem>
             ))}
       </ListMovies>
