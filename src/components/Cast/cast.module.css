@@ -1,50 +1,50 @@
 .listImg {
-    width: 100px;
+  width: 100px;
 }
 
 .list {
-    list-style: none;
+  list-style: none;
 }
 
 .listItem {
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    width: 1080px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  width: 1080px;
 }
 
 .listItem:hover,
 .listItem:focus {
-    background-color: rgb(255, 178, 35);
-    color: #e9e9e9;
+  background-color: rgb(255, 178, 35);
+  color: #e9e9e9;
 }
 
 .listName {
-    font-size: 22px;
-    font-weight: 700;
-    margin: 15px 150px;
-    width: 300px;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 15px 150px;
+  width: 300px;
 }
 
 .listCharacter {
-    font-size: 22px;
+  font-size: 22px;
 }
 
 .listWrap {
-    width: 1200px;
-    height: 500px;
-    overflow: overlay;
-    margin: 50px auto;
-    border: 1px solid #e9e9e9;
-    border-radius: 10px;
-    box-shadow: rgb(0 0 0 / 50%) 0px 0px 10px;
+  width: 1200px;
+  height: 500px;
+  overflow: overlay;
+  margin: 50px auto;
+  border: 1px solid #e9e9e9;
+  border-radius: 10px;
+  box-shadow: rgb(0 0 0 / 50%) 0px 0px 10px;
 }
 
 .error {
-    font-size: 30px;
-    color: #272727;
-    margin-left: 150px;
-    margin-top: 40px;
+  font-size: 30px;
+  color: #272727;
+  margin-left: 150px;
+  margin-top: 40px;
 }

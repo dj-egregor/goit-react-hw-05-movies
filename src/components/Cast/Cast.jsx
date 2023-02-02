@@ -4,6 +4,8 @@ import { getMovieCast } from '../../shared/services/api';
 import css from './cast.module.css';
 import PropTypes from 'prop-types';
 
+import userImg from '../../img/user.jpg';
+
 const Cast = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -35,13 +37,23 @@ const Cast = () => {
           <ul className={css.list}>
             {data.map(({ name, character, profile_path, id }) => (
               <li key={id} className={css.listItem}>
-                {profile_path && (
+                {/* {profile_path && (
                   <img
                     className={css.listImg}
                     alt={name}
                     src={`https://image.tmdb.org/t/p/w92${profile_path}`}
                   />
+                )} */}
+                {profile_path ? (
+                  <img
+                    className={css.listImg}
+                    alt={name}
+                    src={`https://image.tmdb.org/t/p/w92${profile_path}`}
+                  />
+                ) : (
+                  <img className={css.listImg} alt={name} src={userImg} />
                 )}
+
                 <p className={css.listName}>{name}</p>
                 <p className={css.listCharacter}>{character}</p>
               </li>

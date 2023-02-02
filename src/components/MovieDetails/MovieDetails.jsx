@@ -2,6 +2,7 @@ import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 import { useState, useEffect, Suspense } from 'react';
 import { getMovieDetails } from '../../shared/services/api';
 import css from './movie-details.module.css';
+import noMovieImg from '../../img/no-poster-available.jpg';
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -48,11 +49,16 @@ const MovieDetails = () => {
       ) : (
         <>
           <div className={css.imgWrap}>
-            <img
-              className={css.img}
-              alt={data.original_title}
-              src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
-            />
+            {data.poster_path ? (
+              <img
+                className={css.img}
+                alt={data.original_title}
+                src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+              />
+            ) : (
+              <img className={css.img} src={noMovieImg} alt="not available" />
+            )}
+
             <div className={css.descrWrap}>
               <h1>
                 {data.original_title} ({getYear(data.release_date)})
