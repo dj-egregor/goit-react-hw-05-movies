@@ -27,7 +27,9 @@ const Movies = () => {
         setLoading(false);
       }
     };
-    getData();
+    if (searchQuery) {
+      getData();
+    }
   }, [searchQuery]);
 
   const handleChange = e => {
