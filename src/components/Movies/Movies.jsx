@@ -20,7 +20,6 @@ const Movies = () => {
         setLoading(true);
         const { results } = await searchMovie(searchQuery);
         setData(results);
-        console.log(results);
         setLoading(false);
       } catch (error) {
         console.log(error);
